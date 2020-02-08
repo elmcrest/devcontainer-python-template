@@ -1,0 +1,27 @@
+{
+    "name": "Python",
+    "context": "..",
+    "dockerFile": "Dockerfile",
+    // Use 'settings' to set *default* container specific settings.json values on container create. 
+    // You can edit these settings after create using File > Preferences > Settings > Remote.
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "python.pythonPath": "/usr/local/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.linting.pylintPath": "/usr/local/share/pip-global/bin/pylint"
+    },
+    "appPort": [
+        9000
+    ],
+    "postCreateCommand": "pip install -r requirements.txt",
+    // Comment out next line to run as root
+    "remoteUser": "vscode",
+    "extensions": [
+        "ms-python.python",
+        "ms-azuretools.vscode-docke",
+        "jhartell.vscode-line-endings",
+        "hbenl.vscode-test-explorer",
+        "littlefoxteam.vscode-python-test-adapter"
+    ]
+}
